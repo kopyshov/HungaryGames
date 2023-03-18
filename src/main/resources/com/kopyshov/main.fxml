@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kopyshov.Controller">
+   <right>
+       <GridPane maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="323.9999938964844" minHeight="10.0" percentHeight="85.0" prefHeight="264.79998168945315" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="280.26665191650386" minHeight="49.600006103515625" prefHeight="109.60001831054683" vgrow="ALWAYS" />
+           </rowConstraints>
+           <BorderPane.margin>
+               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+           </BorderPane.margin>
+           <padding>
+               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+           </padding>
+           <TextArea fx:id="terminal" minWidth="300.0" prefHeight="671.0" prefWidth="398.0" />
+           <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <GridPane.margin>
+                   <Insets />
+               </GridPane.margin>
+               <padding>
+                   <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+               <opaqueInsets>
+                   <Insets />
+               </opaqueInsets>
+               <Button fx:id="playSimButton" disable="true" layoutX="14.0" layoutY="19.0" maxHeight="60.0" maxWidth="115.0" minHeight="40.0" minWidth="115.0" mnemonicParsing="false" onAction="#playSimulation" prefHeight="40.0" prefWidth="115.0" text="Play" AnchorPane.bottomAnchor="6.0" />
+               <Button fx:id="pauseSimButton" disable="true" layoutX="148.0" layoutY="69.0" maxHeight="60.0" maxWidth="115.0" minHeight="40.0" minWidth="115.0" mnemonicParsing="false" onAction="#pauseSimulation" prefHeight="40.0" prefWidth="115.0" text="Pause" AnchorPane.bottomAnchor="7.0" />
+               <Button fx:id="stopSimButton" disable="true" layoutX="278.0" layoutY="69.0" maxHeight="60.0" maxWidth="115.0" minHeight="40.0" minWidth="115.0" mnemonicParsing="false" onAction="#stopSimulation" prefHeight="40.0" prefWidth="115.0" text="Stop" AnchorPane.bottomAnchor="6.0" />
+               <Spinner fx:id="widthValue" editable="true" initialValue="10" layoutX="16.0" layoutY="9.0" max="30" min="10" prefHeight="26.0" prefWidth="56.0" />
+               <Spinner fx:id="heightValue" editable="true" initialValue="10" layoutX="16.0" layoutY="32.0" max="30" min="10" prefHeight="26.0" prefWidth="56.0" />
+               <Label layoutX="80.0" layoutY="13.0" prefHeight="18.0" prefWidth="68.0" text="Ширина">
+                   <font>
+                       <Font name="System Bold" size="14.0" />
+                   </font>
+               </Label>
+               <Label layoutX="80.0" layoutY="36.0" prefHeight="18.0" prefWidth="68.0" text="Высота">
+                   <font>
+                       <Font size="14.0" />
+                   </font>
+               </Label>
+               <Button fx:id="generateButton" layoutX="148.0" layoutY="16.0" maxHeight="60.0" maxWidth="243.0" minHeight="40.0" minWidth="115.0" mnemonicParsing="false" onAction="#generateActionMap" prefHeight="40.0" prefWidth="243.0" text="НОВАЯ КАРТА" />
+           </AnchorPane>
+       </GridPane>
+   </right>
+   <top>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" text="Button" />
+        </buttons>
+      </ButtonBar>
+   </top>
+   <center>
+      <StackPane fx:id="platform" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
